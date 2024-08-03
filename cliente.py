@@ -10,9 +10,9 @@ port = 55555
 cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 try:
     cliente.connect((host, port))
-    print("Connected to the server")
+    print("Conectado al servidor")
 except Exception as e:
-    print(f"Unable to connect: {e}")
+    print(f"No puede conectarse: {e}")
 
 #funcion para recibir mensajes
 def recibir_mensajes():
@@ -24,7 +24,7 @@ def recibir_mensajes():
             else:
                 print(mensaje)
         except Exception as e:
-            print(f"Error receiving messages: {e}")
+            print(f"Error al recibir mensajes: {e}")
             cliente.close()
             break
 
@@ -35,7 +35,7 @@ def escribir_mensajes():
         try:
             cliente.send(mensaje.encode('utf-8'))
         except Exception as e:
-            print(f"Error sending messages: {e}")
+            print(f"Error al enviar mensajes: {e}")
             cliente.close()
             break
 
